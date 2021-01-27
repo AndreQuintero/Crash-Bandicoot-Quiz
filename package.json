@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "lottie-web": "^5.7.6",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
