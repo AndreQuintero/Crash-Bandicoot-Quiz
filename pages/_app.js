@@ -14,7 +14,6 @@ body {
   /* New styles */
   display: flex;
   flex-direction: column;
-  font-family: 'Lato', sans-serif;
   // Deixa branco no começo
   // eslint-disable-next-line no-shadow
   color: ${({ theme }) => theme.colors.contrastText};
@@ -22,6 +21,16 @@ body {
 html, body {
   min-height: 100vh;
 }
+
+body,
+input,
+button,
+select,
+textarea {
+  font-family: 'Lato', sans-serif;
+}
+
+
 #__next {
   flex: 1;
   display: flex;
