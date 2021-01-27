@@ -10,7 +10,6 @@ const Input = styled.input`
     outline: none;
     color:  ${({ theme }) => theme.colors.contrastText};
     font-size: 14px;
-    font-family: Lato;
     margin-top: 25px;
 `;
 
