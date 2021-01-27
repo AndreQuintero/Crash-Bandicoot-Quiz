@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Button = styled.button`
-  font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -28,5 +28,10 @@ const Button = styled.button`
     cursor: not-allowed;
   }
 `;
+
+Button.propTypes = {
+  type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Button;
