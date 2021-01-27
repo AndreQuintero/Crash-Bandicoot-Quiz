@@ -18,6 +18,7 @@ const strokeAnimation = keyframes`
 
 const Path = styled.path`
       animation: ${strokeAnimation} 10s ease-in-out forwards; 
+      -webkit-animation: ${strokeAnimation} 10s ease-in-out forwards; 
 `;
 function Logo({ className }) {
   return (
