@@ -1,4 +1,22 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const animationTopic = keyframes`
+ 0% {
+    opacity: 0;
+    transform: scale(.1);
+    transform: translate3d(-50px, 0, 0);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+    transform: translate3d(15px, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    transform: translate3d(0, 0, 0);
+  }
+`;
 
 const Widget = styled.div`
   margin-top: 24px;
@@ -43,6 +61,28 @@ Widget.Content = styled.div`
   ul {
     list-style: none;
     padding: 0;
+  }
+`;
+
+Widget.Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  padding: 15px 20px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: .3s;
+  display: block;
+  animation: ${animationTopic} 0.2s linear both;
+  -webkit-animation: ${animationTopic} 0.2s linear both;
+  animation-delay: ${({ delay }) => delay};
+  -webkit-animation-delay:  ${({ delay }) => delay};
+
+  &:hover,
+  &:focus {
+    opacity: .5;
   }
 `;
 
