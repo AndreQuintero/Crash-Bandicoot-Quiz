@@ -109,10 +109,12 @@ export default function QuizPage() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    // eslint-disable-next-line no-unused-expressions
-    questionIndex === questions.length
-      ? setStateScreen(StateScreen.RESULT)
-      : setQuestionIndex(questionIndex + 1);
+    const nextQuestion = questionIndex + 1;
+    if (nextQuestion < totalQuestions) {
+      setQuestionIndex(questionIndex + 1);
+    } else {
+      setStateScreen(StateScreen.RESULT);
+    }
   };
 
   return (
