@@ -3,9 +3,14 @@
     "bgSecondary": "https://articles.gamerheadquarters.com/images/top10/movies/10.jpg", 
     "title": "Quiz CSS da Alura",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+    "result": {
+      "bad": "https://media.giphy.com/media/JQIxIJQCo9DCoQK1jW/giphy.gif",
+      "regular": "https://media.giphy.com/media/rgx0dbs3uZXwA7JcPR/giphy.gif",
+      "good": "https://media.giphy.com/media/Y4dj3NVmgcUWCzSmoq/giphy.gif"
+    },
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+        "image": "https://media.giphy.com/media/3sC6kn6zAzYABW7rRR/giphy.gif",
         "title": "Como fazer um seletor por id via CSS?",
         "description": "Essa é pra aquecer",
         "answer": 2,
@@ -17,7 +22,7 @@
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "image": "https://media.giphy.com/media/yYv6R4460lEOsFLMkB/giphy.gif",
         "title": "Como fazer um background gradiente com css?",
         "description": "Faz tempo em haha",
         "answer": 0,
