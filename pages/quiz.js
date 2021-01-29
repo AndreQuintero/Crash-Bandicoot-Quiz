@@ -10,6 +10,7 @@ import Dots from '../src/components/Dots';
 import StateScreen from '../src/enum/screen-state';
 import QuestionWidget from '../src/components/Quiz/questionWidget';
 import Result from '../src/components/Quiz/result';
+import GitHubCorner from '../src/components/GitHubCorner';
 
 const H3 = styled.h3`
     width: 100%;
@@ -96,6 +97,7 @@ export default function QuizPage() {
         {stateScreen === StateScreen.LOADING && <LoadingBox />}
         {stateScreen === StateScreen.RESULT && <Result results={results} />}
       </QuizContainer>
+      <GitHubCorner projectUrl="https://github.com/AndreQuintero" />
     </QuizBackground>
   );
 }
