@@ -8,12 +8,8 @@ import { bg, questions } from '../db.json';
 import Loader from '../src/components/Loader';
 import Dots from '../src/components/Dots';
 import StateScreen from '../src/enum/screen-state';
-
-const Img = styled.img`
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-`;
+import QuestionWidget from '../src/components/Quiz/questionWidget';
+import Result from '../src/components/Quiz/result';
 
 const H3 = styled.h3`
     width: 100%;
@@ -44,59 +40,16 @@ const LoadingBox = () => (
   </Widget>
 );
 
-const QuestionWidget = ({
-  question, totalQuestions, questionIndex, onClick, isCorrect, color,
-}) => {
-  const questionId = `question__${questionIndex}`;
-
-  return (
-    <>
-      <Widget>
-        <Widget.Header>
-          <h3>Pergunta {questionIndex + 1} de {totalQuestions} </h3>
-        </Widget.Header>
-        <Img alt="Descrição" src={question.image} />
-        <Widget.Content>
-          <h2> {question.title} </h2>
-          <p> {question.description} </p>
-          <form>
-            {question.alternatives.map((alternative, index) => {
-              const idAlternative = `alternative-${index}`;
-              return (
-                <Widget.Topic
-                  key={idAlternative}
-                  as="label"
-                  htmlFor={idAlternative}
-                  delay={`${0.2 * index}s`}
-                  isCorrect={() => isCorrect()}
-                  background={color}
-                >
-                  <input
-                    style={{ display: 'none' }}
-                    id={idAlternative}
-                    name={questionId}
-                    type="radio"
-                    onClick={(e) => onClick(e)}
-                  />
-                  {alternative}
-                </Widget.Topic>
-              );
-            })}
-          </form>
-        </Widget.Content>
-      </Widget>
-    </>
-  );
-};
-
 export default function QuizPage() {
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [selectedAlternative, setSelectedAlternative] = useState();
   const [stateScreen, setStateScreen] = useState(StateScreen.LOADING);
+  const [results, setResults] = useState([]);
   const totalQuestions = questions.length;
 
   useEffect(() => {
     setTimeout(() => {
-      setStateScreen(StateScreen.QUIZ);
+      setStateScreen(StateScreen.LOADING);
     }, 1 * 2000);
   }, []);
 
@@ -107,11 +60,23 @@ export default function QuizPage() {
     }, 1 * 2000);
   }, [questionIndex]);
 
-  const handleClick = (e) => {
+  const addResults = (question, alternativeSelected, isCorrect) => {
+    setResults([...results, {
+      question: question.title,
+      alternative: alternativeSelected,
+      isCorrect,
+    }]);
+  };
+
+  const handleClick = (e, index) => {
     e.preventDefault();
+
+    setSelectedAlternative(index);
     const nextQuestion = questionIndex + 1;
     if (nextQuestion < totalQuestions) {
-      setQuestionIndex(questionIndex + 1);
+      setTimeout(() => {
+        setQuestionIndex(questionIndex + 1);
+      }, 2500);
     } else {
       setStateScreen(StateScreen.RESULT);
     }
@@ -127,9 +92,11 @@ export default function QuizPage() {
           totalQuestions={totalQuestions}
           questionIndex={questionIndex}
           onClick={handleClick}
+          addResults={addResults}
         />
         ) }
         {stateScreen === StateScreen.LOADING && <LoadingBox />}
+        {stateScreen === StateScreen.RESULT && <Result results={results} />}
       </QuizContainer>
     </QuizBackground>
   );
