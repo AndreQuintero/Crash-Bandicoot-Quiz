@@ -1,11 +1,13 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Widget from '../Widget';
 import Gauge from '../Gauge/gauge';
 import { result } from '../../../db.json';
 import Img from '../Img';
+import Colors from '../../enum/colors';
 
 const Flex = styled.div`
     width: 100%;
@@ -15,12 +17,28 @@ const Flex = styled.div`
     transform: translateX(-5%);
 `;
 
+const P = styled.p`
+  color:  ${({ color }) => color || '#FFF'};
+  &::first-letter {
+    text-transform: uppercase;
+  }
+`;
+
 const Result = ({ results }) => {
   const total = results.length;
   const totalCorrect = results.filter((res) => res.isCorrect).length;
   const correctQuestions = results.filter((res) => res.isCorrect);
   const incorrectQuestions = results.filter((res) => !res.isCorrect);
   const percent = (totalCorrect / total) * 100;
+  const { name } = useRouter().query;
+  const status = () => {
+    if (percent >= 75) {
+      return result.good;
+    } if (percent < 75 && percent >= 50) {
+      return result.regular;
+    }
+    return result.bad;
+  };
 
   return (
     <>
@@ -41,22 +59,28 @@ const Result = ({ results }) => {
           <h3>Você acertou um total de {totalCorrect} de {total}</h3>
         </Widget.Header>
         <Widget.Content>
-          <Img alt="Descrição" src={result.bad} />
-          <p>Mais sorte na próxima vez...</p>
+          <Img alt="Descrição" src={status().image} />
+          <P>{`${name}, ${status().message}`}</P>
         </Widget.Content>
         <Widget.Content>
-          <h4>Questões Corretas:</h4>
+          <h4>Questões que você acertou:</h4>
           {correctQuestions.length > 0 && correctQuestions.map((correct, index) => (
-            <p key={`correct-${index}`}>{correct.question} R:{correct.alternative}</p>
+            <div key={`correct-${index}`}>
+              <p>{correct.question}</p>
+              <P color={Colors.LIMEGREEN}>{correct.alternative}</P>
+            </div>
           ))}
           {correctQuestions.length === 0 && <p>Você não acertou nenhuma questão :(</p>}
         </Widget.Content>
         <Widget.Content>
-          <h4>Questões Incorretas:</h4>
+          <h4>Questões que você errou:</h4>
           {correctQuestions.length > 0 && incorrectQuestions.map((incorrect, index) => (
-            <p key={`incorrect-${index}`}>{incorrect.question} R:{incorrect.alternative}</p>
+            <div key={`incorrect-${index}`}>
+              <p>{incorrect.question}</p>
+              <P color={Colors.CORAL}>{incorrect.alternative}</P>
+            </div>
           ))}
-          {incorrectQuestions.length === 0 && <p>Você acertou todas as questões :O</p>}
+          {incorrectQuestions.length === 0 && <p>Você acertou todas as questões :D</p>}
         </Widget.Content>
       </Widget>
     </>
