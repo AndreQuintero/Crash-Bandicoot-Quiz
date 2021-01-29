@@ -90,9 +90,14 @@ Widget.Topic = styled.a`
   -webkit-animation: ${animationTopic} 0.2s linear both;
   animation-delay: ${({ delay }) => delay};
   -webkit-animation-delay:  ${({ delay }) => delay};
-
+  &:focus,
   &:hover {
-    opacity: .5;
+    opacity: ${({ color, selected }) => {
+    if (color !== Colors && selected) {
+      return '1';
+    }
+    return '0.5';
+  }};
   }
 `;
 

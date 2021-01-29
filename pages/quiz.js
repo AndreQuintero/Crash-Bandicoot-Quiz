@@ -61,25 +61,25 @@ export default function QuizPage() {
   }, [questionIndex]);
 
   const addResults = (question, alternativeSelected, isCorrect) => {
-    setResults([...results, {
-      question: question.title,
-      alternative: alternativeSelected,
-      isCorrect,
-    }]);
+    setTimeout(() => {
+      setResults([...results, {
+        question: question.title,
+        alternative: alternativeSelected,
+        isCorrect,
+      }]);
+    }, 2500);
   };
 
   const handleClick = (e, index) => {
-    e.preventDefault();
-
-    setSelectedAlternative(index);
-    const nextQuestion = questionIndex + 1;
-    if (nextQuestion < totalQuestions) {
-      setTimeout(() => {
+    setTimeout(() => {
+      setSelectedAlternative(index);
+      const nextQuestion = questionIndex + 1;
+      if (nextQuestion < totalQuestions) {
         setQuestionIndex(questionIndex + 1);
-      }, 2500);
-    } else {
-      setStateScreen(StateScreen.RESULT);
-    }
+      } else {
+        setStateScreen(StateScreen.RESULT);
+      }
+    }, 2500);
   };
 
   return (

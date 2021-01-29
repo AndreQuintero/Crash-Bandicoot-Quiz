@@ -35,8 +35,8 @@ const WidgetAlternatives = ({
         name={questionId}
         type="radio"
         onClick={(e) => {
-          onClick(e, index);
           resposta();
+          onClick(e, index);
           addResults(question, alternative, isCorrect);
         }}
       />

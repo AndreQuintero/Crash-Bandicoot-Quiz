@@ -11,15 +11,16 @@ const GaugeComponent = ({ percent }) => {
 
   useEffect(() => {
     const percentGauge = calculateGaugePercent();
-    let count = 0;
-    const interval = setInterval(() => {
-      count += 1;
-      setGaugeValue(count);
-      if (count === percentGauge) {
-        clearInterval(interval);
-      }
-    }, 10);
-    return () => clearInterval(interval);
+    if (percentGauge !== 0) {
+      let count = 0;
+      const interval = setInterval(() => {
+        count += 1;
+        setGaugeValue(count);
+        if (count === percentGauge) {
+          clearInterval(interval);
+        }
+      }, 10);
+    }
   }, []);
 
   return (
