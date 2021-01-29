@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import Colors from '../../enum/colors';
 
 const animationTopic = keyframes`
  0% {
@@ -19,6 +20,7 @@ const animationTopic = keyframes`
 `;
 
 const Widget = styled.div`
+  min-height: 300px;
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -68,7 +70,17 @@ Widget.Topic = styled.a`
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};
-  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  background-color: ${({ theme, color, selected }) => {
+    if (color === Colors.DEFAULT && !selected) {
+      return `${theme.colors.primary}40`;
+    } if (color === Colors.GREEN && selected) {
+      return Colors.GREEN;
+    } if (color === Colors.RED && selected) {
+      return Colors.RED;
+    }
+    return `${theme.colors.primary}40`;
+  }
+};
   padding: 15px 20px;
   margin-bottom: 8px;
   cursor: pointer;

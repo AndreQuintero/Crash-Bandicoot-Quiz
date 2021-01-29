@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import * as Loader from '../../../loader.json';
 
 const Div = styled.div`
-    display: block;
-    width: 80%;
-    height: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    width: 70%;
     margin: auto;
 `;
 
