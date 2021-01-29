@@ -61,13 +61,11 @@ export default function QuizPage() {
   }, [questionIndex]);
 
   const addResults = (question, alternativeSelected, isCorrect) => {
-    setTimeout(() => {
-      setResults([...results, {
-        question: question.title,
-        alternative: alternativeSelected,
-        isCorrect,
-      }]);
-    }, 2500);
+    setResults([...results, {
+      question: question.title,
+      alternative: alternativeSelected,
+      isCorrect,
+    }]);
   };
 
   const handleClick = (e, index) => {
