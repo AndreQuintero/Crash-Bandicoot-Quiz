@@ -15,9 +15,11 @@ const WidgetAlternatives = ({
   }, []);
 
   const resposta = () => {
-    handleSelected(true);
-    if (!isCorrect) {
-      setChangeColor(colors.RED);
+    if (!selected) {
+      handleSelected(true);
+      if (!isCorrect) {
+        setChangeColor(colors.RED);
+      }
     }
   };
 
@@ -37,7 +39,9 @@ const WidgetAlternatives = ({
         onClick={(e) => {
           resposta();
           onClick(e, index);
-          addResults(question, alternative, isCorrect);
+          if (!selected) {
+            addResults(question, alternative, isCorrect);
+          }
         }}
       />
       {alternative}
