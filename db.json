@@ -4,9 +4,18 @@
     "title": "Quiz CSS da Alura",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "result": {
-      "bad": "https://media.giphy.com/media/JQIxIJQCo9DCoQK1jW/giphy.gif",
-      "regular": "https://media.giphy.com/media/rgx0dbs3uZXwA7JcPR/giphy.gif",
-      "good": "https://media.giphy.com/media/Y4dj3NVmgcUWCzSmoq/giphy.gif"
+      "bad": {
+        "image": "https://media.giphy.com/media/BV2fKsAAcq9Iryhzup/giphy.gif",
+        "message": "seu resultado não foi dos melhores, mas sempre é tempo de jogar Crash Bandicoot."
+      },
+      "regular": {
+        "image":  "https://media.giphy.com/media/2XYKj2LEyjUEbLu2lg/giphy.gif",
+        "message": "seu resultado foi regular, continue jogando Crash Bandicoot."
+      }, 
+      "good": {
+        "image":  "https://media.giphy.com/media/G3yGss4OvA3bvsoQ10/giphy.gif",
+        "message": "uau! você realmente é um mestre marsupial, um verdadeiro platinador de jogos do Crash!"
+      }
     },
     "questions": [
       {
