@@ -20,7 +20,6 @@ const animationTopic = keyframes`
 `;
 
 const Widget = styled.div`
-  min-height: 300px;
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -92,8 +91,7 @@ Widget.Topic = styled.a`
   animation-delay: ${({ delay }) => delay};
   -webkit-animation-delay:  ${({ delay }) => delay};
 
-  &:hover,
-  &:focus {
+  &:hover {
     opacity: .5;
   }
 `;
