@@ -74,7 +74,7 @@ const Result = ({ results }) => {
         </Widget.Content>
         <Widget.Content>
           <h4>Questões que você errou:</h4>
-          {correctQuestions.length > 0 && incorrectQuestions.map((incorrect, index) => (
+          {incorrectQuestions.length > 0 && incorrectQuestions.map((incorrect, index) => (
             <div key={`incorrect-${index}`}>
               <p>{incorrect.question}</p>
               <P color={Colors.CORAL}>{incorrect.alternative}</P>
