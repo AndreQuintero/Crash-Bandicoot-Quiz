@@ -6,15 +6,21 @@
     "result": {
       "bad": {
         "image": "https://media.giphy.com/media/BV2fKsAAcq9Iryhzup/giphy.gif",
-        "message": "seu resultado não foi dos melhores, mas sempre é tempo de jogar Crash Bandicoot."
+        "message": "seu resultado não foi dos melhores, mas sempre é tempo de jogar Crash Bandicoot.",
+        "imageExternal": "https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif",
+        "messageExternal": "seu resultado não doi dos melhores, mas sempre há tempo para melhorar seu conhecimento."
       },
       "regular": {
         "image":  "https://media.giphy.com/media/2XYKj2LEyjUEbLu2lg/giphy.gif",
-        "message": "seu resultado foi regular, continue jogando Crash Bandicoot."
+        "message": "seu resultado foi regular, continue jogando Crash Bandicoot.",
+        "imageExternal": "https://media.giphy.com/media/Lk023zZqHJ3Zz4rxtV/giphy.gif",
+        "messageExternal": "seu resultado foi regular, continue buscando conhecimento."
       }, 
       "good": {
         "image":  "https://media.giphy.com/media/G3yGss4OvA3bvsoQ10/giphy.gif",
-        "message": "uau! você realmente é um mestre marsupial, um verdadeiro platinador de jogos do Crash!"
+        "message": "uau! você realmente é um mestre marsupial, um verdadeiro platinador de jogos do Crash!",
+        "imageExternal": "https://media.giphy.com/media/M33UV4NDvkTHa/giphy.gif",
+        "messageExternal": "uau! você realmente é um mestre no assunto!"
       }
     },
     "questions": [
@@ -42,7 +48,8 @@
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-css.omariosouto.vercel.app/",
+      "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
