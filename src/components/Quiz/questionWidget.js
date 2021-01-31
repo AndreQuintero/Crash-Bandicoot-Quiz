@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Widget from '../Widget';
 import WidgetAlternatives from './widget-alternatives';
 import Img from '../Img';
+import BackLinkArrow from '../BackLinkArrow';
 
 const QuestionWidget = ({
   question, totalQuestions, questionIndex, onClick, addResults,
@@ -13,6 +14,7 @@ const QuestionWidget = ({
     <>
       <Widget>
         <Widget.Header>
+          <BackLinkArrow href="/" />
           <h3>Pergunta {questionIndex + 1} de {totalQuestions} </h3>
         </Widget.Header>
         <Img alt="Descrição" src={question.image} />
