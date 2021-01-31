@@ -16,7 +16,7 @@ const GaugeComponent = ({ percent }) => {
       const interval = setInterval(() => {
         count += 1;
         setGaugeValue(count);
-        if (count === percentGauge) {
+        if (count === Math.round(percentGauge)) {
           clearInterval(interval);
         }
       }, 10);
