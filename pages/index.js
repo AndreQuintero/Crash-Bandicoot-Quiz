@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { bg, title, description } from '../db.json';
+import {
+  bg, title, description, external,
+} from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
@@ -9,6 +11,7 @@ import QuizLogo from '../src/components/QuizLogo';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer';
+import Link from '../src/components/Link';
 
 export default function Home() {
   const router = useRouter();
@@ -45,7 +48,23 @@ export default function Home() {
         <Widget>
           <Widget.Content>
             <h1>Quizes da Galera</h1>
-            <p>lorem ipsum dolor sit amet...</p>
+            <ul>
+              {external.map((quiz) => {
+                const [projectName, githubUser] = quiz
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '')
+                  .split('.');
+
+                return (
+                  <li key={quiz}>
+                    <Widget.Topic as={Link} href={`/quiz/${projectName}___${githubUser}`}>
+                      {`${projectName}/${githubUser}`}
+                    </Widget.Topic>
+                  </li>
+                );
+              }) }
+            </ul>
           </Widget.Content>
         </Widget>
         <Footer />
