@@ -24,7 +24,7 @@ const P = styled.p`
   }
 `;
 
-const Result = ({ results }) => {
+const Result = ({ results, external }) => {
   const total = results.length;
   const totalCorrect = results.filter((res) => res.isCorrect).length;
   const correctQuestions = results.filter((res) => res.isCorrect);
@@ -38,6 +38,13 @@ const Result = ({ results }) => {
       return result.regular;
     }
     return result.bad;
+  };
+
+  const getName = () => {
+    if (name) {
+      return name;
+    }
+    return '';
   };
 
   return (
@@ -59,8 +66,8 @@ const Result = ({ results }) => {
           <h3>Você acertou um total de {totalCorrect} de {total}</h3>
         </Widget.Header>
         <Widget.Content>
-          <Img alt="Descrição" src={status().image} />
-          <P>{`${name}, ${status().message}`}</P>
+          <Img alt="Descrição" src={external ? status().imageExternal : status().image} />
+          <P>{`${getName()} ${getName() !== '' ? ',' : ''}  ${external ? status().messageExternal : status().message}`}</P>
         </Widget.Content>
         <Widget.Content>
           <h4>Questões que você acertou:</h4>
