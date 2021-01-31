@@ -1,8 +1,8 @@
 {
     "bg": "https://hdwallsource.com/img/2020/4/crash-bandicoot-4-its-about-time-game-background-wallpaper-71946-74464-hd-wallpapers.jpg",
     "bgSecondary": "https://articles.gamerheadquarters.com/images/top10/movies/10.jpg", 
-    "title": "Quiz CSS da Alura",
-    "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+    "title": "Quiz Crash Bandicoot It's About Time",
+    "description": "Teste os seus conhecimentos sobre o mais novo jogo do marsupial favorito da galera!",
     "result": {
       "bad": {
         "image": "https://media.giphy.com/media/BV2fKsAAcq9Iryhzup/giphy.gif",
@@ -26,24 +26,64 @@
     "questions": [
       {
         "image": "https://media.giphy.com/media/3sC6kn6zAzYABW7rRR/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
+        "title": "Qual o nome da ilha em que Crash mora?",
         "description": "Essa é pra aquecer",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Ilha da insanidade", 
+          "Ilha do Cortex",
+          "Ilha N.sanity",
+          "Ilha Twinsanity"
         ]
       },
       {
         "image": "https://media.giphy.com/media/yYv6R4460lEOsFLMkB/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
+        "title": "Em que ano se passa aproximadamente a dimensão dos dinos?",
         "description": "Faz tempo em haha",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "88 milhões a.c.b",
+           "3 milhões a.c.",
+           "40 milhões a.c",
+           "8 mil a.c"
+        ]
+      },
+      {
+        "image": "https://media1.tenor.com/images/12e28d88ca546b5baeb81dd94609a75e/tenor.gif",
+        "title": "Qual o nome da máscara elemental da realidade?",
+        "description": "A primeira máscara encontrada no jogo",
+        "answer": 3,
+        "alternatives": [
+           "Uka Uka",
+           "Aku Aku",
+           "Ika Ika",
+           "Lani Loli",
+           "Akano"
+        ]
+      },
+      {
+        "image": "https://media1.tenor.com/images/17e117f941298ae20f4b7dd0b85bdea5/tenor.gif",
+        "title": "Qual o plano de Dr. N.Tropy neste novo jogo da série?",
+        "description": "A motivação do vilão",
+        "answer": 3,
+        "alternatives": [
+           "Usar o poder das máscaras elementais para derrotar Crash.",
+           "Se unir novamente ao Dr. Neo Cortex e eliminar Crash.",
+           "Obter todos os cristais para usar em sua máquina do tempo.",
+           "Usar o gerador de fenda temporal para voltar ao princípio e moldar o mundo de acordo com sua vontade."
+        ]
+      },
+      {
+        "image": "https://media1.tenor.com/images/5f3a81ddf54ea2b19e388ae063424dc7/tenor.gif",
+        "title": "Qual o primeiro chefe do jogo?",
+        "description": "Um baterista e tanto",
+        "answer": 3,
+        "alternatives": [
+           "Ripper Roo",
+           "N.Cortex",
+           "Dingodile",
+           "N.Gin",
+           "N.Brio"
         ]
       }
     ],
